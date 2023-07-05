@@ -1,0 +1,5 @@
+token = ""
+baseUrl = "http://localhost:8080/jshell/"
+
+rateLimitWindowSeconds = 10
+rateLimitRequestsInWindow = 3
