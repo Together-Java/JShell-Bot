@@ -8,6 +8,7 @@ public record JShellResult(
   String id,
   String source,
   String result,
+  JShellExceptionResult exception,
   boolean stdoutOverflow,
   String stdout,
   List<String> errors

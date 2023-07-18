@@ -26,7 +26,7 @@ public class ResultRenderer {
       builder.setTitle("Request timed out");
     }
 
-    String description = result.errors().isEmpty() ? result.stdout() : String.join(", ", result.errors());
+    String description = result.exception() == null ? result.errors().isEmpty() ? result.stdout() : String.join(", ", result.errors()) : result.exception().exceptionClass() + ":" + result.exception().exceptionMessage();
     builder.setDescription(Strings.limitSize(description, MessageEmbed.DESCRIPTION_MAX_LENGTH));
 
     if (partOfSession) {
