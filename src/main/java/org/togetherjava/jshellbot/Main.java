@@ -16,7 +16,7 @@ public class Main {
     TomlMapper mapper = TomlMapper.builder().build();
 
     Config config = mapper.readValue(
-      Files.readString(Path.of(args[0])),
+      Main.class.getResourceAsStream("/config.toml"),
       Config.class
     );
 
