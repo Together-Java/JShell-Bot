@@ -32,12 +32,11 @@ public class JShellApi {
 
   public JShellResult evalOnce(String code) {
     return send(
-      baseUrl + "eval",
+      baseUrl + "single-eval",
       HttpRequest.newBuilder().POST(BodyPublishers.ofString(code)),
-      ofJson(JShellResultWithId.class, objectMapper)
+      ofJson(JShellResult.class, objectMapper)
     )
-      .body()
-      .result();
+      .body();
   }
 
   public JShellResult evalSession(String code, String sessionId) {
